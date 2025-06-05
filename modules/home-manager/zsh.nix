@@ -9,7 +9,6 @@
     home.packages = with pkgs; [
       bat
       eza
-      thefuck
     ];
 
     programs.zsh = {
@@ -32,7 +31,7 @@
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "thefuck" ];
+        plugins = [ "git" ];
       };
 
     };
@@ -49,6 +48,8 @@
         
       };
     };
+
+    programs.pay-respects.enable = true;
 
     home.file = {
       ".zshenv".text = ''

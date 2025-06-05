@@ -15,7 +15,7 @@
 
     programs.zed-editor = {
       enable = true;
-      extensions = [ "nix" "toml" "material-icon-theme" "codebook" "ayu-darker" ];
+      extensions = [ "nix" "toml" "material-icon-theme" "codebook" "ayu-darker" "ruff" ];
       userKeymaps = [
         {
        	  bindings = {
@@ -38,6 +38,8 @@
       userSettings = {
         telemetry.metrics = false;
        	features.edit_prediction_provider = "zed";
+
+	language_overrides.Python.language_servers = ["ruff"];
 
        	vim_mode = true;
        	relative_line_numbers = true;
