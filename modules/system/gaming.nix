@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
 
@@ -9,6 +9,8 @@
     hydenix.gaming.enable = lib.mkForce true;
 
     programs.gamemode.enable = true;
+
+    programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
 
   };
 

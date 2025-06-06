@@ -11,6 +11,7 @@
       nil
       libclang
       libgcc
+      ruff
     ];
 
     programs.zed-editor = {
