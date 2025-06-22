@@ -27,7 +27,7 @@ in
 
     hydenix.sddm = {
       enable = lib.mkForce true;
-      theme = pkgs.hydenix.sddm-corners;
+      theme = "Corners";
     };
 
     services.displayManager.sddm.settings = {

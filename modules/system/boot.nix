@@ -9,10 +9,10 @@
     hydenix.boot = {
       enable = lib.mkForce true;
       useSystemdBoot = false;
+      grubTheme = "Pochita";
     };
 
     boot.loader = {
-      grub.theme = lib.mkForce "${pkgs.hydenix.grub-retroboot}/share/grub/themes/Retroboot";
       efi.canTouchEfiVariables = lib.mkForce false;
     };
 
