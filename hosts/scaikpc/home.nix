@@ -1,9 +1,13 @@
-{ lib, stateVersion, hostName, userName, ... }:
+{ lib, stateVersion, hostName, userName, pkgs, ... }:
 
 {
 
   imports = [
     ./../../modules/home-manager
+  ];
+
+  home.packages = with pkgs; [
+    insomnia
   ];
 
   hyprland.configText = ''
