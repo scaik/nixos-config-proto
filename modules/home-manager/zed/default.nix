@@ -18,6 +18,8 @@
   config = lib.mkIf config.zed.enable {
 
     home.packages = with pkgs; [
+      nil
+      nixd
       ruff
     ];
 
