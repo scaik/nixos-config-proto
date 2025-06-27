@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
 
@@ -27,12 +32,17 @@
     services = {
       dbus.enable = true;
       upower.enable = true;
+      gnome.gnome-keyring.enable = true;
     };
 
     xdg.portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      config = { common = { default = [ "gtk" ]; }; };
+      config = {
+        common = {
+          default = [ "gtk" ];
+        };
+      };
     };
 
     fonts.packages = with pkgs; [

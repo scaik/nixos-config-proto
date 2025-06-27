@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 let
   xcfg = config.services.xserver;
@@ -33,6 +38,8 @@ in
     services.displayManager.sddm.settings = {
       Wayland.CompositorCommand = "${lib.getExe pkgs.weston} --shell=kiosk -c ${westonIni}";
     };
+
+    security.pam.services.sddm.enableGnomeKeyring = true;
 
   };
 
