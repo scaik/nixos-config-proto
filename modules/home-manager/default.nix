@@ -1,4 +1,11 @@
-{ inputs, pkgs, lib, stateVersion, userName, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  stateVersion,
+  userName,
+  ...
+}:
 
 {
 
@@ -10,7 +17,7 @@
     ./git.nix
     ./hyprland.nix
     ./social.nix
-    ./zed.nix
+    ./zed
     ./zen-browser.nix
     ./zsh.nix
   ];
