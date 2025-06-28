@@ -9,13 +9,20 @@
       features.edit_prediction_provider = "zed";
 
       languages.Python = {
-        language_servers = [ "basedpyright" "ruff" "!pyright" ];
+        language_servers = [
+          "basedpyright"
+          "ruff"
+          "!pyright"
+        ];
         format_on_save = "on";
         formatter = [
           {
             external = {
               command = "ruff";
-              arguments = [ "format" "-" ];
+              arguments = [
+                "format"
+                "-"
+              ];
             };
           }
           {
@@ -26,8 +33,6 @@
           }
         ];
       };
-
-      # language_overrides.Python.language_servers = [ "ruff" ];
 
       vim_mode = true;
       relative_line_numbers = true;
@@ -55,7 +60,7 @@
       theme = {
         mode = "system";
         light = "Ayu Light";
-        dark = "Ayu Darker";
+        dark = "KTRZ Monokai";
       };
       icon_theme = "Material Icon Theme";
 

@@ -1,14 +1,28 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
 
-  imports = [ ./keymap.nix ./settings.nix ./theme-overrides.nix ];
+  imports = [
+    ./keymap.nix
+    ./settings.nix
+    ./theme-overrides.nix
+  ];
 
   options.zed.enable = lib.mkEnableOption "Enable zed module";
 
   config = lib.mkIf config.zed.enable {
 
-    home.packages = with pkgs; [ nil nixd ruff ];
+    home.packages = with pkgs; [
+      basedpyright
+      nil
+      nixd
+      ruff
+    ];
 
     programs.zed-editor = {
       enable = true;
@@ -17,6 +31,7 @@
         "basedpyright"
         "codebook"
         "dockerfile"
+        "ktrz-monokai"
         "material-icon-theme"
         "nix"
         "ruff"
