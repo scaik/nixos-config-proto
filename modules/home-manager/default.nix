@@ -1,4 +1,11 @@
-{ inputs, pkgs, lib, stateVersion, userName, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  stateVersion,
+  userName,
+  ...
+}:
 
 {
 
@@ -28,7 +35,10 @@
     homeDirectory = "/home/${userName}";
     stateVersion = stateVersion;
 
-    packages = with pkgs; [ fastfetch rustup ];
+    packages = with pkgs; [
+      fastfetch
+      rustup
+    ];
   };
 
   hydenix.hm = {
