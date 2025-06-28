@@ -37,8 +37,8 @@
 
     packages = with pkgs; [
       fastfetch
-      gcc
-      rustup
+      rustc
+      cargo
     ];
   };
 

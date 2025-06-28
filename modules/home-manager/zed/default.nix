@@ -22,6 +22,8 @@
       nil
       nixd
       ruff
+      rust-analyzer
+      rustfmt
     ];
 
     programs.zed-editor = {
