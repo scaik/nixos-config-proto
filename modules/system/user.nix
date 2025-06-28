@@ -4,9 +4,7 @@
 
   programs.zsh = {
     enable = true;
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake /etc/nixos";
-    };
+    shellAliases = { nrs = "sudo nixos-rebuild switch --flake /etc/nixos"; };
   };
 
   users = {
@@ -16,5 +14,5 @@
       extraGroups = [ "wheel" "networkmanager" "video" ];
     };
   };
-  
+
 }

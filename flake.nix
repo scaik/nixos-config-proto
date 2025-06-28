@@ -26,38 +26,45 @@
 
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: let
+  outputs = { nixpkgs, home-manager, ... }@inputs:
+    let
 
-    system = "x86_64-linux";
-    userName = "scaik";
-    hosts = [
-      { hostName = "scaikpc"; stateVersion = "25.05"; }
-    ];
+      system = "x86_64-linux";
+      userName = "scaik";
+      hosts = [{
+        hostName = "scaikpc";
+        stateVersion = "25.05";
+      }];
 
-    makeSystem = { hostName, stateVersion }: nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = { inherit inputs hostName stateVersion userName; };
-      modules = [
-        ./hardware-configuration.nix
-        ./hosts/${hostName}/configuration.nix
+      makeSystem = { hostName, stateVersion }:
+        nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = { inherit inputs hostName stateVersion userName; };
+          modules = [
+            ./hardware-configuration.nix
+            ./hosts/${hostName}/configuration.nix
 
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-	  home-manager.backupFileExtension = "backup";
-          home-manager.users.${userName} = import ./hosts/${hostName}/home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs stateVersion userName; };
-        }
-      ];
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.${userName} =
+                import ./hosts/${hostName}/home.nix;
+              home-manager.extraSpecialArgs = {
+                inherit inputs stateVersion userName;
+              };
+            }
+          ];
+        };
+
+    in {
+
+      nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
+        configs // {
+          "${host.hostName}" =
+            makeSystem { inherit (host) hostName stateVersion; };
+        }) { } hosts;
+
     };
-
-  in {
-
-    nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
-        "${host.hostName}" = makeSystem { inherit (host) hostName stateVersion; };
-      }
-    ) {} hosts;
-
-  };
 }

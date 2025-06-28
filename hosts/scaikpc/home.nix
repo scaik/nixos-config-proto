@@ -2,13 +2,9 @@
 
 {
 
-  imports = [
-    ./../../modules/home-manager
-  ];
+  imports = [ ./../../modules/home-manager ];
 
-  home.packages = with pkgs; [
-    insomnia
-  ];
+  home.packages = with pkgs; [ insomnia ];
 
   hyprland.configText = ''
     monitor = DP-2,1920x1080@144,0x0,1

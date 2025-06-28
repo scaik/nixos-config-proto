@@ -6,16 +6,16 @@ let
     inherit (inputs.hydenix.lib) system;
     config.allowUnfree = true;
     overlays = [
-      inputs.hydenix.lib.overlays (final: prev: {
+      inputs.hydenix.lib.overlays
+      (final: prev: {
         userPkgs = import inputs.nixpkgs {
-	  system = prev.system;
+          system = prev.system;
           config.allowUnfree = true;
         };
       })
     ];
   };
-in
-{
+in {
 
   nixpkgs.pkgs = pkgs;
 

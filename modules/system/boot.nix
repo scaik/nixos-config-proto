@@ -12,9 +12,7 @@
       grubTheme = "Pochita";
     };
 
-    boot.loader = {
-      efi.canTouchEfiVariables = lib.mkForce false;
-    };
+    boot.loader = { efi.canTouchEfiVariables = lib.mkForce false; };
 
   };
 }

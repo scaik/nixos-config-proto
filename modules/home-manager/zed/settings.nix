@@ -1,8 +1,4 @@
-{
-  lib,
-  config,
-  ...
-}:
+{ lib, config, ... }:
 
 {
 
@@ -13,20 +9,13 @@
       features.edit_prediction_provider = "zed";
 
       languages.Python = {
-        language_servers = [
-          "basedpyright"
-          "ruff"
-          "!pyright"
-        ];
+        language_servers = [ "basedpyright" "ruff" "!pyright" ];
         format_on_save = "on";
         formatter = [
           {
             external = {
               command = "ruff";
-              arguments = [
-                "format"
-                "-"
-              ];
+              arguments = [ "format" "-" ];
             };
           }
           {

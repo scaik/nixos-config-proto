@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 
 {
 
@@ -9,7 +9,7 @@
     programs.git = {
       enable = true;
       userName = "Evsey Kazansky";
-      userEmail = "thescaik@icloud.com";
+      userEmail = "67639168+scaik@users.noreply.github.com";
     };
 
   };

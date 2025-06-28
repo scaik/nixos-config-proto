@@ -8,8 +8,8 @@
 
     hydenix.network.enable = lib.mkForce true;
 
-    networking.firewall.allowedTCPPorts = lib.mkForce [];
-    networking.firewall.allowedUDPPorts = lib.mkForce [];
+    networking.firewall.allowedTCPPorts = lib.mkForce [ ];
+    networking.firewall.allowedUDPPorts = lib.mkForce [ ];
 
   };
 

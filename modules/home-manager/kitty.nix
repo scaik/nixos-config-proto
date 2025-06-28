@@ -5,7 +5,7 @@
   options.kitty.enable = lib.mkEnableOption "Enable kitty module";
 
   config = lib.mkIf config.kitty.enable {
-    
+
     hydenix.hm.terminals = {
       enable = lib.mkForce true;
       kitty.configText = ''

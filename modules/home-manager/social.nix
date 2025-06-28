@@ -13,9 +13,7 @@
       vesktop.enable = false;
     };
 
-    home.packages = with pkgs; [
-      telegram-desktop
-    ];
+    home.packages = with pkgs; [ telegram-desktop ];
 
   };
 

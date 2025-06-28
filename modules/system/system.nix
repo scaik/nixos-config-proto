@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 
 {
 
@@ -38,11 +33,7 @@
     xdg.portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      config = {
-        common = {
-          default = [ "gtk" ];
-        };
-      };
+      config = { common = { default = [ "gtk" ]; }; };
     };
 
     fonts.packages = with pkgs; [
@@ -53,9 +44,7 @@
 
     programs.nix-ld = {
       enable = true;
-      libraries = with pkgs; [
-        stdenv.cc.cc.lib
-      ];
+      libraries = with pkgs; [ stdenv.cc.cc.lib ];
     };
 
   };
