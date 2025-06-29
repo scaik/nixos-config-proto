@@ -66,10 +66,6 @@
         "editor.indent_guide" = "#363a4f99";
         "editor.indent_guide_active" = "#5b6078";
         "terminal.background" = "#00000000";
-        "syntax" = {
-          keyword.color = "#fead65ff";
-          function.color = "#ffd173ff";
-        };
       };
 
     };
