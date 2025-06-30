@@ -1,7 +1,6 @@
 { pkgs, inputs, lib, ... }:
 
 let
-  # pkgs = import inputs.hydenix.inputs.hydenix-nixpkgs {
   pkgs = import inputs.nixpkgs {
     inherit (inputs.hydenix.lib) system;
     config.allowUnfree = true;
@@ -28,6 +27,7 @@ in {
     ./gaming.nix
     ./hyprland.nix
     ./network.nix
+    ./ollama.nix
     ./sddm.nix
     ./system.nix
     ./user.nix
@@ -39,6 +39,7 @@ in {
   gaming.enable = lib.mkDefault true;
   hyprland.enable = lib.mkDefault true;
   network.enable = lib.mkDefault true;
+  ollama.enable = lib.mkDefault true;
   sddm.enable = lib.mkDefault true;
   system.enable = lib.mkDefault true;
 
