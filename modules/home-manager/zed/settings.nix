@@ -66,6 +66,81 @@
 
       inlay_hints.enabled = true;
 
+      languages = {
+        JavaScript = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+          code_actions_on_format = {
+            source.fixAll.biome = true;
+            source.organizeImports.biome = true;
+          };
+        };
+        TypeScript = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+          code_actions_on_format = {
+            source.fixAll.biome = true;
+            source.organizeImports.biome = true;
+          };
+        };
+        JSX = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+          code_actions_on_format = {
+            source.fixAll.biome = true;
+            source.organizeImports.biome = true;
+          };
+        };
+        TSX = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+          code_actions_on_format = {
+            source.fixAll.biome = true;
+            source.organizeImports.biome = true;
+          };
+        };
+        JSON = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+        };
+        JSONC = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+        };
+        CSS = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+        };
+        GraphQL = {
+          formatter = {
+            language_server = {
+              name = "biome";
+            };
+          };
+        };
+      };
+
     };
 
   };

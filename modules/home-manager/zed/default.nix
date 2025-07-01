@@ -31,8 +31,10 @@
       extensions = [
         "ayu-darker"
         "basedpyright"
+        "biome"
         "codebook"
         "dockerfile"
+        "html"
         "ktrz-monokai"
         "material-icon-theme"
         "nix"
