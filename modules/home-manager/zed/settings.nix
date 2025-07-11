@@ -74,8 +74,8 @@
             };
           };
           code_actions_on_format = {
-            source.fixAll.biome = true;
-            source.organizeImports.biome = true;
+            "source.fixAll.biome" = true;
+            "source.organizeImports.biome" = true;
           };
         };
         TypeScript = {
@@ -85,8 +85,8 @@
             };
           };
           code_actions_on_format = {
-            source.fixAll.biome = true;
-            source.organizeImports.biome = true;
+            "source.fixAll.biome" = true;
+            "source.organizeImports.biome" = true;
           };
         };
         JSX = {
@@ -96,8 +96,8 @@
             };
           };
           code_actions_on_format = {
-            source.fixAll.biome = true;
-            source.organizeImports.biome = true;
+            "source.fixAll.biome" = true;
+            "source.organizeImports.biome" = true;
           };
         };
         TSX = {
@@ -107,8 +107,8 @@
             };
           };
           code_actions_on_format = {
-            source.fixAll.biome = true;
-            source.organizeImports.biome = true;
+            "source.fixAll.biome" = true;
+            "source.organizeImports.biome" = true;
           };
         };
         JSON = {
