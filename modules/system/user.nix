@@ -4,7 +4,10 @@
 
   programs.zsh = {
     enable = true;
-    shellAliases = { nrs = "sudo nixos-rebuild switch --flake /etc/nixos"; };
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake /etc/nixos";
+      nrb = "sudo nixos-rebuild boot --flake /etc/nixos"
+    };
   };
 
   users = {
