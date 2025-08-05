@@ -11,7 +11,7 @@
 
   imports = [
     inputs.hydenix.lib.homeModules
-    inputs.nix-index-database.hmModules.nix-index
+    inputs.nix-index-database.homeModules.nix-index
 
     ./kitty.nix
     ./git.nix
