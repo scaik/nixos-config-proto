@@ -9,6 +9,7 @@
     code-cursor
     obsidian
     yandex-disk
+    claude-code
   ];
 
   hyprland.configText = ''
