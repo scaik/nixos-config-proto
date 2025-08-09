@@ -7,6 +7,19 @@ let
     overlays = [
       inputs.hydenix.lib.overlays
       (final: prev: {
+        code-cursor = prev.code-cursor.overrideAttrs (old: {
+	  version = "1.4.2";
+	  src = prev.appimageTools.extract {
+	    pname = "cursor";
+	    version = "1.4.2";
+	    src = prev.fetchurl {
+	      url = "https://downloads.cursor.com/production/d01860bc5f5a36b62f8a77cd42578126270db343/linux/x64/Cursor-1.4.2-x86_64.AppImage";
+              hash = "sha256-WMZA0CjApcSTup4FLIxxaO7hMMZrJPawYsfCXnFK4EE=";
+	    };
+	  };
+	  sourceRoot = "cursor-1.4.2-extracted/usr/share/cursor";
+	});
+
         userPkgs = import inputs.nixpkgs {
           system = prev.system;
           config.allowUnfree = true;
