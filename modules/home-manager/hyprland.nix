@@ -28,11 +28,15 @@
                 }
 
                 input {
-        	        kb_layout = us,ru
-        	        kb_options = caps:menu
-        	        accel_profile = flat
+		  kb_layout = us,ru
+		  kb_options = caps:menu
+		  accel_profile = flat
               	  force_no_accel = true
               	}
+
+		misc {
+		  enable_anr_dialog = false
+		}
 
                 unbind = $mainMod, Left
                 unbind = $mainMod, Right
