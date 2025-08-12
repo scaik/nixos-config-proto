@@ -1,4 +1,4 @@
-{ inputs, stateVersion, hostName, ... }:
+{ inputs, stateVersion, hostName, pkgs, ... }:
 
 {
 
@@ -19,6 +19,7 @@
       modesetting.enable = true;
       powerManagement.enable = true;
     };
+    i2c.enable = true;
   };
 
   hydenix = {
@@ -26,6 +27,21 @@
     timezone = "Europe/Moscow";
     locale = "en_US.UTF-8";
   };
+
+  services.hardware.openrgb.enable = true;
+
+  services.udev.packages = with pkgs; [ openrgb ];
+
+  environment.systemPackages = with pkgs; [
+    openrgb-with-all-plugins
+  ];
+  
+  boot.kernelModules = [
+    "i2c-dev"
+    "i2c-piix4"
+  ];
+
+  boot.kernelParams = [ "acpi_enforce_resources=lax" ];
 
   system.stateVersion = stateVersion;
 
