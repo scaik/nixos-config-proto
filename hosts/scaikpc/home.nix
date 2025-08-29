@@ -11,6 +11,7 @@
     yandex-disk
     claude-code
     vscode
+    jdk
   ];
 
   hyprland.configText = ''
